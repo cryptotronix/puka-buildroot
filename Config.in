@@ -1,0 +1,2 @@
+# links to custom packages
+source "$BR2_EXTERNAL_SED_TRAINING_PATH/package/bootgen/Config.in.host"
