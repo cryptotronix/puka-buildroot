@@ -9,9 +9,6 @@ cp ${BOARD_DIR}/fsbl.elf ${BINARIES_DIR}/fsbl.elf
 cp ${BOARD_DIR}/fpga.bit ${BINARIES_DIR}/fpga.bit
 cp ${BOARD_DIR}/boot.bif ${BINARIES_DIR}/boot.bif
 
-# give u-boot elf the actual extension so bootgen doesn't complain
-cp ${BINARIES_DIR}/u-boot ${BINARIES_DIR}/u-boot.elf
-
 (cd ${BINARIES_DIR}; bootgen -image boot.bif -arch zynq -o BOOT.bin -w on)
 
 $mkimage -f ${BINARIES_DIR}/image.its -r ${BINARIES_DIR}/image.fit
