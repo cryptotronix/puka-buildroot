@@ -97,3 +97,9 @@
 	dr_mode = "host";
 	usb-phy = <&usb_phy0>;
 };
+
+&gpio0 {
+	emio-gpio-width = <4>;
+	gpio-mask-high = <0x0>;
+	gpio-mask-low = <0x5600>;
+};
