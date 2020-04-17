@@ -9,12 +9,39 @@
 #include "zynq-7000.dtsi"
 
 / {
+	amba_pl: amba_pl {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "simple-bus";
+		ranges ;
+		axi_uartlite_0: serial@42c00000 {
+			clock-names = "s_axi_aclk";
+			clocks = <&clkc 15>;
+			compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
+			current-speed = <115200>;
+			device_type = "serial";
+			interrupt-names = "interrupt";
+			interrupt-parent = <&intc>;
+			interrupts = <0 29 1>;
+			port-number = <0>;
+			reg = <0x42c00000 0x10000>;
+			xlnx,baudrate = <0x1c200>;
+			xlnx,data-bits = <0x8>;
+			xlnx,odd-parity = <0x0>;
+			xlnx,s-axi-aclk-freq-hz-d = "100.0";
+			xlnx,use-parity = <0x0>;
+		};
+	};
+};
+
+/ {
 	model = "Zynq ARTY Z7 Development Board";
 	compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
 
 	aliases {
 		ethernet0 = &gem0;
 		serial0 = &uart0;
+		serial1 = &axi_uartlite_0;
 		spi0 = &qspi;
 		mmc0 = &sdhci0;
 	};
