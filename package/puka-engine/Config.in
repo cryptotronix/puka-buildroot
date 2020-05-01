@@ -1,0 +1,14 @@
+  config BR2_PACKAGE_PUKA_ENGINE
+	bool "puka-engine"
+	depends on BR2_TOOLCHAIN_USES_GLIBC
+	depends on BR2_TOOLCHAIN_BUILDROOT_LIBC="glibc"
+	depends on BR2_TOOLCHAIN_BUILDROOT_GLIBC
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_LIBOPENSSL
+	select BR2_PACKAGE_LIBGLIB2
+	select BR2_PACKAGE_LIBGPGME
+	select BR2_PACKAGE_SQLITE
+	select BR2_PACKAGE_UTIL_LINUX
+	select BR2_PACKAGE_PYTHON3
+	help
+	  Engines for the Quartermaster device.
