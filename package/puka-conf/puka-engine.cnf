@@ -1,0 +1,17 @@
+openssl_conf = openssl_init
+
+[openssl_init]
+
+engines = engine_section
+
+[engine_section]
+
+puka-engine = puka
+
+[puka]
+# engine control
+SET_UART_PATH=
+# apply all defined algorithms
+default_algorithms = ALL
+# initialize
+init=1

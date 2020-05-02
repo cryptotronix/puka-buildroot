@@ -10,5 +10,6 @@
 	select BR2_PACKAGE_SQLITE
 	select BR2_PACKAGE_UTIL_LINUX
 	select BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PUKA_CONF
 	help
-	  Engines for the Quartermaster device.
+	  Puka OpenSSL engine for training.

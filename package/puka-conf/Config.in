@@ -1,0 +1,4 @@
+  config BR2_PACKAGE_PUKA_CONF
+	bool "puka-conf"
+	help
+	  Openssl conf for puka engine usage.
