@@ -6,11 +6,11 @@ engines = engine_section
 
 [engine_section]
 
-puka-engine = puka
+puka_engine = puka
 
 [puka]
 # engine control
-SET_UART_PATH=
+SET_UART_PATH=/dev/ttyUL0
 # apply all defined algorithms
 default_algorithms = ALL
 # initialize

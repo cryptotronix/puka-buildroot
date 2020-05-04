@@ -3,9 +3,6 @@
 # This is mostly being used for generation of certificate requests.
 #
 
-# Note that you can include other files from the main configuration
-# file using the .include directive.
-.include /etc/ssl/puka-engine.cnf
 
 # This definition stops the following lines choking if HOME isn't
 # defined.
@@ -14,6 +11,10 @@ HOME			= .
 # Extra OBJECT IDENTIFIER info:
 #oid_file		= $ENV::HOME/.oid
 oid_section		= new_oids
+
+# including our cnf file before above commands
+# adds those commands to the engine section, which we dont want 
+.include /etc/ssl/puka_engine.cnf
 
 # To use this configuration file with the "-extfile" option of the
 # "openssl x509" utility, name here the section containing the
