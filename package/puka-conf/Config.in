@@ -1,4 +1,6 @@
   config BR2_PACKAGE_PUKA_CONF
 	bool "puka-conf"
+	depends on BR2_PACKAGE_OPENSSL
+	depends on BR2_PACKAGE_LIBOPENSSL
 	help
 	  Openssl conf for puka engine usage.

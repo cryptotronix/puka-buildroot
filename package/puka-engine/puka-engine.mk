@@ -10,9 +10,7 @@ PUKA_ENGINE_LICENSE = Apache-2.0 GPL-3.0-or-later BSD-4-Clause-UC OpenSSL CC0-1.
 PUKA_ENGINE_LICENSE_FILES = LICENSE
 PUKA_ENGINE_INSTALL_STAGING = NO
 PUKA_ENGINE_INSTALL_TARGET = YES
-PUKA_ENGINE_DEPENDENCIES = openssl libopenssl util-linux glibc sqlite python3 libgpgme
-PUKA_ENGINE_CONF_ENV = \
-	GPG_ERROR_CONFIG=$(STAGING_DIR)/usr/bin/gpg-error-config
+PUKA_ENGINE_DEPENDENCIES = openssl libopenssl util-linux glibc readline
 PUKA_ENGINE_CONF_OPTS += \
 	--with-enginesdir=$(TARGET_DIR)/usr/lib/engines-1.1 \
 	--disable-emulator \
