@@ -40,4 +40,11 @@ fi
 
 #execution
 echo "PUKA_ENGINE_OVERRIDE_SRCDIR=$pukadir" > $seddir/package/puka-engine/local.mk
-echo -e "\ndone!"
+
+checkval=`cat $seddir/package/puka-engine/local.mk`
+
+if [ "$checkval" = "PUKA_ENGINE_OVERRIDE_SRCDIR=$pukadir" ]; then
+	echo -e "\nsuccess!"
+else
+	echo -e "\nfailed, error occured."
+fi
