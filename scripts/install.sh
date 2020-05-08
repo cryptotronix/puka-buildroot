@@ -4,17 +4,18 @@ sudo apt update \
     && sudo apt upgrade -y \
     && sudo apt autoremove -y \
     && sudo apt install -y libncurses-dev \
-            git libssl-dev autotools-dev autoconf \
-            libtool pkg-config libglib2.0-dev  \
-            picocom libreadline-dev \
-            apt-transport-https \
-            ca-certificates \
-            curl tree \
-            gnupg-agent \
-            software-properties-common \
+	    git libssl-dev autotools-dev autoconf \
+	    libtool pkg-config libglib2.0-dev  \
+	    picocom libreadline-dev \
+	    apt-transport-https \
+	    ca-certificates \
+	    curl tree \
+	    gnupg-agent \
+	    software-properties-common \
     && sudo usermod -a -G dialout student
 
-sudo cp readline.pc /usr/share/pkgconfig/readline.pc
+wget https://raw.githubusercontent.com/cryptotronix/puka-buildroot/master/scripts/readline.pc
+sudo mv readline.pc /usr/share/pkgconfig/readline.pc
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
